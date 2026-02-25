@@ -1,42 +1,25 @@
-// Smooth scroll
-document.querySelectorAll('nav a').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
-    e.preventDefault();
-    document.querySelector(this.getAttribute('href'))
-      .scrollIntoView({ behavior: 'smooth' });
-  });
-});
+function reveal() {
 
-// Scroll animacija kartica
-const cards = document.querySelectorAll('.card');
+  const reveals = document.querySelectorAll(".reveal");
 
-window.addEventListener('scroll', () => {
-  const trigger = window.innerHeight * 0.85;
+  reveals.forEach(element => {
 
-  cards.forEach(card => {
-    const top = card.getBoundingClientRect().top;
-    if (top < trigger) {
-      card.classList.add('show');
+    const windowHeight = window.innerHeight;
+
+    const elementTop = element.getBoundingClientRect().top;
+
+    const visible = 100;
+
+    if (elementTop < windowHeight - visible) {
+
+      element.classList.add("active");
+
     }
+
   });
-});
 
-// Brojači
-const counters = document.querySelectorAll('.counter');
+}
 
-counters.forEach(counter => {
-  const updateCount = () => {
-    const target = +counter.getAttribute('data-target');
-    const count = +counter.innerText;
-    const increment = target / 100;
+window.addEventListener("scroll", reveal);
 
-    if (count < target) {
-      counter.innerText = Math.ceil(count + increment);
-      setTimeout(updateCount, 20);
-    } else {
-      counter.innerText = target;
-    }
-  };
-
-  updateCount();
-});
+window.addEventListener("load", reveal);

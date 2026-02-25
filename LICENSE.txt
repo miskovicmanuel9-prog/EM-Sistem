@@ -1,6 +1,6 @@
 The MIT License (MIT)
 
-Copyright (c) 2026 Manuel Miskovic (https://codepen.io/Manuel-Miskovic/pen/RNGwedX)
+Copyright (c) 2026 Manuel Miskovic (https://codepen.io/Manuel-Miskovic/pen/dPpywmz)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

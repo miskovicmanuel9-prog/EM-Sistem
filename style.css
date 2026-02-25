@@ -6,41 +6,53 @@
 
   box-sizing: border-box;
 
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Segoe UI', sans-serif;
 
 }
 
 body {
 
-  background: #f4f6f9;
+  background: #000;
 
-  color: #333;
+  color: white;
+
+  overflow-x: hidden;
 
 }
 
 header {
 
-  background: #0d1b2a;
+  position: fixed;
 
-  color: white;
+  width: 100%;
 
-  padding: 15px 0;
+  top: 0;
 
-}
-
-.container {
-
-  width: 90%;
-
-  max-width: 1100px;
-
-  margin: auto;
+  background: rgba(0,0,0,0.9);
 
   display: flex;
 
   justify-content: space-between;
 
-  align-items: center;
+  padding: 15px 40px;
+
+  z-index: 1000;
+
+  border-bottom: 2px solid #ffd000;
+
+}
+
+.logo {
+
+  font-size: 22px;
+
+  font-weight: bold;
+
+}
+
+.logo span {
+
+  color: #ffd000;
 
 }
 
@@ -48,65 +60,59 @@ nav a {
 
   color: white;
 
-  text-decoration: none;
-
   margin-left: 20px;
 
-  font-weight: 500;
+  text-decoration: none;
+
+  transition: 0.3s;
 
 }
 
 nav a:hover {
 
-  color: #fca311;
+  color: #ffd000;
 
 }
 
 .hero {
 
-  background: linear-gradient(rgba(13,27,42,0.8), rgba(13,27,42,0.8)),
+  height: 100vh;
 
-              url("https://images.unsplash.com/photo-1581092918484-8313d4f1e2e4?auto=format&fit=crop&w=1600&q=80");
+  background: linear-gradient(135deg, #000 40%, #ffd000 200%);
 
-  background-size: cover;
+  display: flex;
 
-  background-position: center;
+  flex-direction: column;
 
-  color: white;
+  justify-content: center;
+
+  align-items: center;
+
+  padding-top: 80px;
 
   text-align: center;
 
-  padding: 120px 20px;
-
 }
 
-.hero h2 {
+.hero h1 {
 
   font-size: 40px;
 
-  margin-bottom: 15px;
-
-}
-
-.hero p {
-
-  margin-bottom: 25px;
-
-  font-size: 18px;
+  margin-bottom: 20px;
 
 }
 
 .btn {
 
-  background: #fca311;
+  background: #ffd000;
 
-  color: #000;
+  color: black;
 
   padding: 12px 30px;
 
   text-decoration: none;
 
-  font-weight: 600;
+  font-weight: bold;
 
   border-radius: 5px;
 
@@ -116,31 +122,39 @@ nav a:hover {
 
 .btn:hover {
 
-  background: #ffba42;
+  background: white;
 
 }
 
 .section {
 
-  padding: 70px 20px;
+  padding: 80px 40px;
 
   text-align: center;
 
 }
 
-.section h2 {
+.dark {
 
-  margin-bottom: 40px;
+  background: #111;
 
-  font-size: 30px;
+}
+
+.section-title {
+
+  color: #ffd000;
+
+  margin-bottom: 30px;
 
 }
 
 .cards {
 
-  display: grid;
+  display: flex;
 
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  justify-content: center;
+
+  flex-wrap: wrap;
 
   gap: 20px;
 
@@ -148,13 +162,15 @@ nav a:hover {
 
 .card {
 
-  background: white;
+  background: #111;
 
   padding: 25px;
 
-  border-radius: 10px;
+  width: 280px;
 
-  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  border: 1px solid #ffd000;
+
+  border-radius: 10px;
 
   transition: 0.3s;
 
@@ -162,133 +178,98 @@ nav a:hover {
 
 .card:hover {
 
-  transform: translateY(-5px);
+  transform: translateY(-10px);
 
-}
-
-.dark {
-
-  background: #1b263b;
-
-  color: white;
+  background: #1a1a1a;
 
 }
 
 footer {
 
-  background: #0d1b2a;
-
-  color: white;
+  padding: 20px;
 
   text-align: center;
 
-  padding: 20px;
+  border-top: 2px solid #ffd000;
 
-  font-size: 14px;
+  background: #000;
 
 }
-/* Floating dugmad */
 
-.floating {
+/* Floating buttons */
+
+.float {
 
   position: fixed;
 
   right: 20px;
 
-  width: 55px;
+  width: 50px;
 
-  height: 55px;
+  height: 50px;
 
   border-radius: 50%;
 
-  display: flex;
+  color: white;
 
-  align-items: center;
+  display: flex;
 
   justify-content: center;
 
-  font-size: 24px;
+  align-items: center;
 
-  color: white;
+  font-weight: bold;
 
   text-decoration: none;
 
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-
-  transition: 0.3s;
-
-  z-index: 999;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
 
 }
 
-.whatsapp {
-
-  background: #25D366;
+.wa {
 
   bottom: 90px;
+
+  background: #25D366;
 
 }
 
 .viber {
 
-  background: #7360F2;
+  bottom: 30px;
 
-  bottom: 20px;
-
-}
-
-.floating:hover {
-
-  transform: scale(1.1);
+  background: #7360f2;
 
 }
 
-/* Brojači */
+/* Animacije */
 
-.counter-section {
-
-  background: #fca311;
-
-  color: black;
-
-}
-
-.counters {
-
-  display: flex;
-
-  justify-content: center;
-
-  gap: 60px;
-
-  flex-wrap: wrap;
-
-}
-
-.counter {
-
-  font-size: 40px;
-
-  font-weight: bold;
-
-}
-
-/* Animacija pri skrolu */
-
-.card {
+.reveal {
 
   opacity: 0;
 
-  transform: translateY(30px);
+  transform: translateY(40px);
 
-  transition: 0.6s ease;
+  transition: 0.8s ease;
 
 }
 
-.card.show {
+.reveal.active {
 
   opacity: 1;
 
   transform: translateY(0);
+
+}
+
+@media(max-width:768px){
+
+  .cards{
+
+    flex-direction: column;
+
+    align-items: center;
+
+  }
 
 }
